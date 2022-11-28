@@ -1,0 +1,117 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Sabor y Arte";
+}
+<header>
+    <div class="banner">
+        <div class="navbar">
+            <div class="content">
+                <h1 class="titulito">PIZZAS Y PASTAS<br /><h2>SABOR Y ARTE</h2></h1>
+                <p class="parrafo">
+                    Te mereces un momento especial, y nosotros queremos llevar Italia a tu mesa como en cada visita a nuestros restaurantes. <br />Prueba la auténtica cocina italiana a domicilio o para recoger en tu sede más cercana.
+                </p>
+                <div>
+                    <button class="boton" type="button"><span class="decoracionBoton"></span>WATCH MORE</button>
+                    <button class="boton" type="button"><span class="decoracionBoton"></span>SUBSCRIBE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6">
+                <div class="text-center">
+                    <h2 class="fw-bolder" style="font-size: 2.5rem;
+font-weight: bold;
+font-family: 'Dancing Script', cursive;">
+                        Our Menu
+                    </h2>
+                    <div class="position-relative p-3">
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="col">
+                                    All
+                                </div>
+                                <div class="col">
+                                    Antipasto
+                                </div>
+                                <div class="col">
+                                    Crema
+                                </div>
+                                <div class="col">
+                                    Lassagna
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row gx-5">
+            @foreach (var product in Model)
+            {
+                <div class="col-lg-4 mb-5">
+                    <div class="card h-100 shadow border-0">
+                        <img class="card-img-top" src="@Html.DisplayFor(mi => product.Image)" alt="...">
+                        <div class="card-body p-4">
+
+                            <a class="text-decoration-none link-dark stretched-link" asp-controller="Product" asp-action="Details" asp-route-id="@product.Id"><h5 class="card-title mb-3" style="font-weight: bold;">@Html.DisplayFor(mi=> product.Name)</h5></a>
+                            <p class="card-text mb-0">
+                                @product.Description
+                            </p>
+                            <ul></ul>
+                            <div class="d-flex" style="align-items: center; margin-top:20px">
+                                <h6 style="margin-left: 20px"><b>Precio:</b>&nbsp;&nbsp;$@product.Price</h6>
+                                <a class="button-cart">
+                                    <i class="bi bi-cart-fill" style="width: 18px;
+height: auto;
+color:#ffffff"></i>
+
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                            <div class="d-flex align-items-end justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="...">
+                                    <div class="small">
+                                        <div class="fw-bold">Kelly Rowan</div>
+                                        <div class="text-muted">March 12, 2022</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+
+        </div>
+        <div class="container-fluid">
+            <div class="d-flex justify-content-center">
+                <div class="btn-box">
+                    <a style="display: inline-block;
+padding: 10px 45px;
+background-color: #ffbe33;
+color: #ffffff;
+border-radius: 45px;
+border: none;
+margin-top: 10px;
+cursor:pointer;">
+                        View More
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
