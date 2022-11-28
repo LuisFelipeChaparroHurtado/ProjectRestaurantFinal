@@ -8,7 +8,7 @@
             <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="@Model.Image" alt="..."></div>
             <div class="col-md-6">
                 <div class="small mb-1"></div>
-                <h1 class="display-5 fw-bolder">@Model.Name</h1>
+                <h1 class="display-5 fw-bolder" style="font-family: 'Dancing Script', cursive;">@Model.Name</h1>
                 <div class="d-flex justify-content-left small text-warning">
                     <div class="bi-star-fill"></div>
                     <div class="bi-star-fill"></div>
@@ -19,7 +19,7 @@
                 <div class="fs-5 mb-3">
                     <span>@Model.Description</span>
                 </div>
-                <p class="lead">$@Model.Price</p>
+                <p class="lead">$ @Model.Price</p>
                 <div class="d-flex">
                     <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem">
                     <button class="btn btn-outline-warning flex-shrink-0" type="button">
@@ -33,17 +33,22 @@
 </section>
 <section class="py-2 bg-light">
     <div class="container px-4 px-lg-5 mt-5">
-        <h2 class="fw-bolder mb-4">Related products</h2>
+        <h2 class="fw-bolder mb-4" style="font-family: 'Dancing Script', cursive;">Related products</h2>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div class="col mb-5">
+            
+            @foreach(var Product in ViewBag.Data)
+            { 
+                @if (Product.Id ==ViewBag.Number1 || Product.Id==ViewBag.Number2 || Product.Id==ViewBag.Number3 || Product.Id==ViewBag.Number4)
+                {
+                 <div class="col mb-5">
                 <div class="card h-100">
 
-                    <img class="card-img-top" src="https://images.pexels.com/photos/3731423/pexels-photo-3731423.jpeg?auto=compress&cs=tinysrgb&w=450&h=300&dpr=1" alt="...">
+                    <img class="card-img-top" src="@Product.Image" alt="...">
 
                     <div class="card-body p-4">
                         <div class="text-center">
 
-                            <h5 class="fw-bolder">Puntanesca</h5>
+                            <h5 class="fw-bolder">@Product.Name</h5>
 
                             <div class="d-flex justify-content-center small text-warning mb-2">
                                 <div class="bi-star-fill"></div>
@@ -53,96 +58,18 @@
                                 <div class="bi-star-fill"></div>
                             </div>
 
-                            $20000
+                            $@Product.Price
                         </div>
                     </div>
 
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-warning mt-auto"><i class="bi-cart-fill me-1"></i></a></div>
+                        <div class="text-center"><a class="btn btn-outline-warning mt-auto"asp-controller="Product" asp-action="Details" asp-route-id="@Product.Id"><i class="bi-cart-fill me-1"></i></a></div>
                     </div>
                 </div>
-            </div>
-            <div class="col mb-5">
-                <div class="card h-100">
-
-                    <img class="card-img-top" src="https://images.pexels.com/photos/1527603/pexels-photo-1527603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="...">
-
-                    <div class="card-body p-4">
-                        <div class="text-center">
-
-                            <h5 class="fw-bolder">Spaguetti</h5>
-
-                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                            </div>
-
-                            $29000
-                        </div>
-                    </div>
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-warning mt-auto"><i class="bi-cart-fill me-1"></i></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-5">
-                <div class="card h-100">
-
-                    <img class="card-img-top" src="https://images.pexels.com/photos/1213710/pexels-photo-1213710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="...">
-
-                    <div class="card-body p-4">
-                        <div class="text-center">
-
-                            <h5 class="fw-bolder">Ensalada de la Casa</h5>
-
-                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                            </div>
-                            $25000
-                        </div>
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-warning mt-auto"><i class="bi-cart-fill me-1"></i></a></div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col mb-5">
-                <div class="card h-100">
-
-                    <img class="card-img-top" src="https://images.pexels.com/photos/991970/pexels-photo-991970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="...">
-
-                    <div class="card-body p-4">
-                        <div class="text-center">
-
-                            <h5 class="fw-bolder">Cerveza Corona</h5>
-
-                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                            </div>
-
-                            $12000
-                        </div>
-                    </div>
-
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-warning mt-auto"><i class="bi-cart-fill me-1"></i></a></div>
-                    </div>
-                </div>
-            </div>
+            </div>    
+                }
+                
+            }
         </div>
     </div>
 </section>

@@ -20,6 +20,7 @@ namespace ustaRestaurant.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
+            
             var data = await _service.GetAllAsync(pt => pt.ProductType);
             return View(data);
         }
@@ -51,10 +52,10 @@ namespace ustaRestaurant.Controllers
                     n => n.Name.Contains(searchString) ||
                     n.Description.Contains(searchString)
                 ).ToList();
-                return View("Index", filteredResult);
+                return View("Menu", filteredResult);
             }
 
-            return View("Index", data);
+            return View("Menu", data);
         }
         
         public async Task<IActionResult> Create()
@@ -77,13 +78,24 @@ namespace ustaRestaurant.Controllers
                 return View(Product);
             }
             await _service.AddNewProductAsync(Product);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Admin));
         }
         [AllowAnonymous]
         // Get: Product/Details/id
         public async Task<IActionResult> Details(int id)
         {
             var data = await _service.GetProductByIdAsync(id);
+            var allData = await _service.GetAllAsync(pt => pt.ProductType);
+            ViewBag.Data = allData;
+            Random random = new Random();
+            int number1 = random.Next(1, 100);
+            ViewBag.Number1 = number1;
+            int number2 = random.Next(1, 100);
+            ViewBag.Number2 = number2;
+            int number3 = random.Next(1, 100);
+            ViewBag.Number3 = number3;
+            int number4 = random.Next(1, 100);
+            ViewBag.Number4 = number4;
             return View(data);
         }
         // Get: Product/Edit/id
@@ -122,7 +134,7 @@ namespace ustaRestaurant.Controllers
                 return View(product);
             }
             await _service.UpdateProductAsync(product);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Admin));
         }
         //Get: Product/Delete/id
         public async Task<IActionResult> Delete(int id)
@@ -139,7 +151,7 @@ namespace ustaRestaurant.Controllers
             var ProductDetails = await _service.GetByIdAsync(id);
             if (ProductDetails == null) return View("NotFound");
             await _service.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Admin));
         }
 
         [AllowAnonymous]

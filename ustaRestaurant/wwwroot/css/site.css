@@ -1313,3 +1313,13 @@ p {
 .ee {
     background-color: #000;
 }
+.boton-cart {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: #ffbe33;
+    display: flex;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}

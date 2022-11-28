@@ -994,45 +994,45 @@ namespace ustaRestaurant.Data
                     {
                         new Comment()
                         {
-                            TitleComment="Deliciosos",
+                            FullName= "Natalia Vazquez",
+                            
                             qualification=Enum.QualityProduct.Excelente,
-                            Opinion="",
-                            ProductId=5
+                            Opinion="Fuimos un lunes festivo. Fue un oasis en medio de una zona donde los restaurantes solo ofrecen trucha. Pedimos unos canelones de espinaca y ricota y un crepe de pollo y champignones. Deliciosos y hechos en horno de leña. La carta es muy variada. Los precios muy buenos. La amabilidad y el ambiente resaltan. Recomendadísimo.",
                         },
                         new Comment()
                         {
-                            TitleComment="Mi plato favorito",
+                            FullName= "Andrea González",
+                            
                             qualification=Enum.QualityProduct.Excelente,
-                            Opinion="Excelente emplatado con los mejores sabores de la comida Italinana 🤌",
-                            ProductId=12
+                            Opinion="El lugar es encantador y la comida deliciosa. Lo único que mejoraría es el tiempo de atención que es un poco demorado. De resto es muy conveniente ya que tiene un espacio de parqueadero y a 500 mts un lugar de postres si uno se anima.",
                         },
                         new Comment()
                         {
-                            TitleComment="Excelente",
+                            FullName= "Sandra Oviedo",
+                            
                             qualification=Enum.QualityProduct.Excelente,
-                            Opinion="Mama mia",
-                            ProductId=19
+                            Opinion="Un lugar con una decoración hermosa, un ambiente tranquilo y buena música.En cuanto a los platos, deliciosooosos!!! Sabores increíbles que alegran el paladar. Precios accesibles y una atención muy buena. 100% recomendado.Me encantaría que hubiera uno más cerca de Bogotá 😁",
                         },
                         new Comment()
                         {
-                            TitleComment="Delicioso",
+                            FullName= "Sandra Chipatecua",
+                            
                             qualification=Enum.QualityProduct.Bueno,
-                            Opinion="Es un buen plato, pero el restaurante cuenta con mejores",
-                            ProductId=12
+                            Opinion="Excelente lugar para eventos y compartir en familia!La atención y la comida son espectaculares",
                         },
                         new Comment()
                         {
-                            TitleComment="Recomendadisimooooo!",
+                            FullName= "Raul González",
+                            
                             qualification=Enum.QualityProduct.Excelente,
-                            Opinion="La mejor Comida Italiana en Sogamoso🤌",
-                            ProductId=25
+                            Opinion="Es una gran experiencia gastronómica, todos los platos son excelentes y cuentan con el sabor tan especial que les da ser preparados en un gran horno de leña. Mi favorito es la lasaña Sabor y Arte, es deliciosa y generosa en cuanto a cantidad. La atención es muy buena y se nota el interés por que quedes satisfecho con cada detalle. Recomendado.",
                         },
                         new Comment()
                         {
-                            TitleComment="Para chuparse los dedos",
+                            FullName= "Laura Suárez",
+                    
                             qualification=Enum.QualityProduct.Excelente,
-                            Opinion="Es de mis comidas favoritas en toda la ciudad 🤌",
-                            ProductId=29
+                            Opinion="La atención fue genial y los platos estuvieron bien preparados. No ed costoso y el ambiente es bastante agradable.",
                         }
                     });
                     context.SaveChanges();

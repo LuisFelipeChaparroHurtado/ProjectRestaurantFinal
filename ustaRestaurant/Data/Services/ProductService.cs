@@ -60,11 +60,8 @@ namespace ustaRestaurant.Data.Services
                 dbProduct.Image = data.Image;
                 dbProduct.Price = data.Price;
                 dbProduct.ProductTypeId = data.ProductTypeId;
-              
-
                 await _context.SaveChangesAsync();
             }
-            await _context.SaveChangesAsync();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace ustaRestaurant.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.7")
+                .HasAnnotation("ProductVersion", "6.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -158,12 +158,10 @@ namespace ustaRestaurant.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("longtext");
@@ -200,12 +198,10 @@ namespace ustaRestaurant.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Value")
                         .HasColumnType("longtext");
@@ -213,6 +209,32 @@ namespace ustaRestaurant.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("ustaRestaurant.Models.Booking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<double>("Date")
+                        .HasColumnType("double");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Bookings");
                 });
 
             modelBuilder.Entity("ustaRestaurant.Models.Cart", b =>
@@ -237,21 +259,16 @@ namespace ustaRestaurant.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Opinion")
+                    b.Property<string>("FullName")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TitleComment")
+                    b.Property<string>("Opinion")
                         .HasColumnType("longtext");
 
                     b.Property<int>("qualification")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("Comments");
                 });
@@ -454,17 +471,6 @@ namespace ustaRestaurant.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("ustaRestaurant.Models.Comment", b =>
-                {
-                    b.HasOne("ustaRestaurant.Models.Product", "Product")
-                        .WithMany("Comments")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("ustaRestaurant.Models.OrderDetail", b =>
                 {
                     b.HasOne("ustaRestaurant.Models.Order", "Order")
@@ -527,8 +533,6 @@ namespace ustaRestaurant.Migrations
             modelBuilder.Entity("ustaRestaurant.Models.Product", b =>
                 {
                     b.Navigation("Carts");
-
-                    b.Navigation("Comments");
 
                     b.Navigation("OrderDetails");
                 });
