@@ -41,6 +41,7 @@ namespace ustaRestaurant.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Cart> Carts { get; set; }

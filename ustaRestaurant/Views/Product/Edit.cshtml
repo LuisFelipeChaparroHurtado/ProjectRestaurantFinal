@@ -3,7 +3,7 @@
 @model NewProductVM
 
 @{
-    ViewData["Title"] = "Update movie";
+    ViewData["Title"] = "Update Product";
 }
 
 <div class="row text">
@@ -11,7 +11,7 @@
         <p><h1>Add a new Product</h1></p>
         <div class="row">
             <div class="col-md-8 offset-2">
-                <form asp-action="Create">
+                <form asp-action="Edit">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group text-center">
                         <img id="ImagePreview" />
@@ -43,7 +43,7 @@
                             </div>
                     <div class="form-group mt-2">
                         <input type="submit" value="Update" class="btn btn-outline-success float-end"/>
-                        <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
+                        <a class="btn btn-outline-secondary" asp-action="Admin">Show all</a>
                     </div>
                 </form>
             </div>

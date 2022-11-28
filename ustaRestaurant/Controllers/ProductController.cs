@@ -20,6 +20,7 @@ namespace ustaRestaurant.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
+            
             var data = await _service.GetAllAsync(pt => pt.ProductType);
             return View(data);
         }
@@ -77,7 +78,7 @@ namespace ustaRestaurant.Controllers
                 return View(Product);
             }
             await _service.AddNewProductAsync(Product);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Admin));
         }
         [AllowAnonymous]
         // Get: Product/Details/id
@@ -133,7 +134,7 @@ namespace ustaRestaurant.Controllers
                 return View(product);
             }
             await _service.UpdateProductAsync(product);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Admin));
         }
         //Get: Product/Delete/id
         public async Task<IActionResult> Delete(int id)
@@ -150,7 +151,7 @@ namespace ustaRestaurant.Controllers
             var ProductDetails = await _service.GetByIdAsync(id);
             if (ProductDetails == null) return View("NotFound");
             await _service.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Admin));
         }
 
         [AllowAnonymous]
