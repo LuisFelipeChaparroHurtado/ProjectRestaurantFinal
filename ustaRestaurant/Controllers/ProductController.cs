@@ -51,10 +51,10 @@ namespace ustaRestaurant.Controllers
                     n => n.Name.Contains(searchString) ||
                     n.Description.Contains(searchString)
                 ).ToList();
-                return View("Index", filteredResult);
+                return View("Menu", filteredResult);
             }
 
-            return View("Index", data);
+            return View("Menu", data);
         }
         
         public async Task<IActionResult> Create()
@@ -84,6 +84,17 @@ namespace ustaRestaurant.Controllers
         public async Task<IActionResult> Details(int id)
         {
             var data = await _service.GetProductByIdAsync(id);
+            var allData = await _service.GetAllAsync(pt => pt.ProductType);
+            ViewBag.Data = allData;
+            Random random = new Random();
+            int number1 = random.Next(1, 100);
+            ViewBag.Number1 = number1;
+            int number2 = random.Next(1, 100);
+            ViewBag.Number2 = number2;
+            int number3 = random.Next(1, 100);
+            ViewBag.Number3 = number3;
+            int number4 = random.Next(1, 100);
+            ViewBag.Number4 = number4;
             return View(data);
         }
         // Get: Product/Edit/id
