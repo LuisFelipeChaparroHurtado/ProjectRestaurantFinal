@@ -1077,6 +1077,71 @@ namespace ustaRestaurant.Data
                  });
                     context.SaveChanges();
                 }
+                //Booking
+                if (!context.Bookings.Any())
+                {
+                    context.Bookings.AddRange(new List<Booking>()
+                    {
+                        new Booking()
+                        {
+                             FullName= "Cristian Moreno",
+                             PhoneNumber="3143385561",
+                             Email="cristian.buitrago@gmail.com",
+                             HowMany=3,
+                             Date=DateTime.Now.AddDays(-15),
+                        },
+                        new Booking()
+                        {
+                             FullName= "Camila Plazas",
+                             PhoneNumber="3112157591",
+                             Email="camila.plazas@gmail.com",
+                             HowMany=3,
+                             Date=DateTime.Now.AddDays(-10),
+                        },
+                        new Booking()
+                        {
+                             FullName= "Cristobal Camacho",
+                             PhoneNumber="3161383561",
+                             Email="cristobal.camacho@gmail.com",
+                             HowMany=3,
+                             Date=DateTime.Now.AddDays(-10),
+                        },
+                        new Booking()
+                        {
+                             FullName= "Felipe Arias",
+                             PhoneNumber="3113385361",
+                             Email="felipe.arias@gmail.com",
+                             HowMany=3,
+                             Date=DateTime.Now.AddDays(-10),
+                        },
+                        new Booking()
+                        {
+                             FullName= "Marcelo Saavedra",
+                             PhoneNumber="3123385561",
+                             Email="marcelo.saavedra@gmail.com",
+                             HowMany=3,
+                             Date=DateTime.Now.AddDays(-10),
+                        },
+                        new Booking()
+                        {
+                             FullName= "Santiago Arias",
+                             PhoneNumber="3112345561",
+                             Email="santiago.arias@gmail.com",
+                             HowMany=3,    
+                            Date=DateTime.Now.AddDays(-10),
+                        },
+                        new Booking()
+                        {
+                             FullName= "Pablo Arias",
+                             PhoneNumber="3103382261",
+                             Email="pablo.arias@gmail.com",
+                             HowMany=2,
+                             Date=DateTime.Now.AddDays(-10),
+                        },
+
+                 });
+                    context.SaveChanges();
+                }
                 //OrderDetail
                 if (!context.OrderDetails.Any())
                 {
