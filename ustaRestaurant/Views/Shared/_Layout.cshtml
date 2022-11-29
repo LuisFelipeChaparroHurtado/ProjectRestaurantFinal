@@ -25,9 +25,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="me-auto" style="margin-top:13px; margin-left:-70px">
-                    <li class="nav-item" style="margin-left:90px"><a class="nav-link" asp-area="" asp-controller="Product" asp-action="Index" style="color:#ffbe33;">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Product" asp-action="Menu" style="color:#ffff;">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Product" asp-action="Menu" style="color:#ffff;">Order</a></li>
+                    <li class="nav-item" style="margin-left:90px"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color:#ffbe33;">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Product" asp-action="Index" style="color:#ffff;">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Product" asp-action="Index" style="color:#ffff;">Order</a></li>
 
                     @if (User.Identity.IsAuthenticated && User.IsInRole(UserRoles.Admin))
                     {
