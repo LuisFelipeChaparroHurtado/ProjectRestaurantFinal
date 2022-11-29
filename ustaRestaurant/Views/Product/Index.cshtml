@@ -1,25 +1,10 @@
 ﻿@model IEnumerable<Product>
 
 @{
-    ViewData["Title"] = "Sabor y Arte";
+    ViewData["Title"] = "Index Sabor y Arte";
 }
-<header>
-    <div class="banner">
-        <div class="navbar">
-            <div class="content">
-                <h1 class="titulito">PIZZAS Y PASTAS<br /><h2>SABOR Y ARTE</h2></h1>
-                <p class="parrafo">
-                    Te mereces un momento especial, y nosotros queremos llevar Italia a tu mesa como en cada visita a nuestros restaurantes. <br />Prueba la auténtica cocina italiana a domicilio o para recoger en tu sede más cercana.
-                </p>
-                <div>
-                    <button class="boton" type="button"><span class="decoracionBoton"></span>WATCH MORE</button>
-                    <button class="boton" type="button"><span class="decoracionBoton"></span>SUBSCRIBE</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-<section class="py-5">
+
+<section>
     <div class="container px-5 my-5">
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-8 col-xl-6">
@@ -29,36 +14,57 @@ font-weight: bold;
 font-family: 'Dancing Script', cursive;">
                         Our Menu
                     </h2>
-                    <div class="position-relative p-3">
-                        <div class="container text-center">
-                            <div class="row">
-                                <div class="col">
-                                    All
-                                </div>
-                                <div class="col">
-                                    Antipasto
-                                </div>
-                                <div class="col">
-                                    Crema
-                                </div>
-                                <div class="col">
-                                    Lassagna
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
                 </div>
             </div>
         </div>
+        <nav class="navbar navbar-expand-lg" style="margin-bottom:60px" aria-label="Tenth navbar example">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation" style="color:#ffbe33">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Product" asp-action="Index" style="color:#ffbe33;" onclick="">ALL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Product" asp-action="Antipasto" style="color:#ffff;">ANTIPASTOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Product" asp-action="OvenPizza" style="color:#ffff;">OVEN PIZZAS</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" style="color:#ffff;">PASTA</a>
+                            <div class="ee dropdown-menu">
+                                <a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Spaguetti" style="color:#ffbe33;">SPAGUETTI</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Cannelloni" style="color:#ffbe33;">CANNELLONI</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Ravioli" style="color:#ffbe33;">RAVIOLI</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Product" asp-action="Lasagnas" style="color:#ffbe33;">LASAGNAS</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Product" asp-action="Crep" style="color:#ffff;">CREPES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Product" asp-action="PiennoBread" style="color:#ffff;">PIENNO BREAD</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Product" asp-action="Fish" style="color:#ffff;">FISH</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Product" asp-action="Beverages" style="color:#ffff;">BEVERAGES</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
         <div class="row gx-5">
             @foreach (var product in Model)
             {
-                @if (product.Id==8 ||product.Id==25 ||product.Id==41 ||product.Id==51 ||product.Id==65 ||product.Id==71)
-                {
-                 <div class="col-lg-4 mb-5">
+                <div class="col-lg-4 mb-5">
                     <div class="card h-100 shadow border-0">
                         <img class="card-img-top" src="@Html.DisplayFor(mi => product.Image)" alt="...">
                         <div class="card-body p-4">
@@ -73,136 +79,28 @@ font-family: 'Dancing Script', cursive;">
                             </div>
                         </div>
                     </div>
-                </div>   
-                }
-                
+                </div>
 
             }
-
-
-
         </div>
+
+
         <div class="container-fluid">
             <div class="d-flex justify-content-center">
                 <div class="btn-box">
-                    <a  style="display: inline-block;
+                    <a style="display: inline-block;
 padding: 10px 45px;
 background-color: #ffbe33;
 color: #ffffff;
 border-radius: 45px;
 border: none;
-margin-top: 10px;
-cursor:pointer;" asp-area="" asp-controller="Product" asp-action="Menu">
+margin-top: 10px;">
                         View More
                     </a>
                 </div>
             </div>
         </div>
-        <section class="book_section layout_padding">
-            <div class="container">
-                <div class="heading_container">
-                    <h2 style="font-size: 2.5rem;
-font-weight: bold;
-font-family: 'Dancing Script', cursive;">
-                        Book A Table
-                    </h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form_container">
-                            <form action="">
-                                <div>
-                                    <input type="text" class="form-control" placeholder="Your Name" />
-                                </div>
-                                <div>
-                                    <input type="text" class="form-control" placeholder="Phone Number" />
-                                </div>
-                                <div>
-                                    <input type="email" class="form-control" placeholder="Your Email" />
-                                </div>
-                                <div>
-                                    <select class="form-control nice-select wide">
-                                        <option value="" disabled selected>
-                                            How many persons?
-                                        </option>
-                                        <option value="">
-                                            2
-                                        </option>
-                                        <option value="">
-                                            3
-                                        </option>
-                                        <option value="">
-                                            4
-                                        </option>
-                                        <option value="">
-                                            5
-                                        </option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <input type="date" class="form-control">
-                                </div>
-                                <div class="btn_box">
-                                    <button>
-                                        Book Now
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="map_container ">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.3098387437885!2d-72.96430793060523!3d5.668262082876844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a44ec3cb29967%3A0xd5de3570ea7b44fa!2sSabor%20%26%20Arte!5e0!3m2!1ses!2sco!4v1669586460510!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-        </section><section class="client_section layout_padding-bottom">
-            <div class="container">
-                <div class="heading_container heading_center psudo_white_primary mb_45">
-                    <h2 style="font-family: 'Dancing Script', cursive;">
-                        What Says Our Customers
-                    </h2>
-                </div>
-            </div>
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> Fuimos un lunes festivo. Fue un oasis en medio de una zona donde los restaurantes solo ofrecen trucha. Pedimos unos canelones de espinaca y ricota y un crepe de pollo y champignones. Deliciosos y hechos en horno de leña. La carta es muy variada. Los precios muy buenos. La amabilidad y el ambiente resaltan. Recomendadísimo. <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>Natalia Vazquez</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> El lugar es encantador y la comida deliciosa. Lo único que mejoraría es el tiempo de atención que es un poco demorado. De resto es muy conveniente ya que tiene un espacio de parqueadero y a 500 mts un lugar de postres si uno se anima. <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>Andrea González</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row gy-4 justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="testimonial-content">
-                                    <p>
-                                        <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i>Un lugar con una decoración hermosa, un ambiente tranquilo y buena música.
-                                        En cuanto a los platos, deliciosooosos!!! Sabores increíbles que alegran el paladar. Precios accesibles y una atención muy buena. 100% recomendado.
-                                        Me encantaría que hubiera uno más cerca de Bogotá 😁 <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i>
-                                    </p><h3>Sandra Oviedo</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                                </div>
-                            </div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> El lugar es encantador y la comida deliciosa. Lo único que mejoraría es el tiempo de atención que es un poco demorado. De resto es muy conveniente ya que tiene un espacio de parqueadero y a 500 mts un lugar de postres si uno se anima. <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>Andrea González</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> El lugar es encantador y la comida deliciosa. Lo único que mejoraría es el tiempo de atención que es un poco demorado. De resto es muy conveniente ya que tiene un espacio de parqueadero y a 500 mts un lugar de postres si uno se anima. <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>Andrea González</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </section>
     </div>
 </section>
+

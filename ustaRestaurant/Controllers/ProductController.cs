@@ -24,15 +24,6 @@ namespace ustaRestaurant.Controllers
             var data = await _service.GetAllAsync(pt => pt.ProductType);
             return View(data);
         }
-        [AllowAnonymous]
-        public async Task<IActionResult> Menu()
-        {
-            var data = await _service.GetAllAsync(pt => pt.ProductType);
-            return View(data);
-        }
-
-        
-
 
         [Authorize(Roles = UserRoles.Admin)]
         public async Task<IActionResult> Admin()
@@ -52,10 +43,10 @@ namespace ustaRestaurant.Controllers
                     n => n.Name.Contains(searchString) ||
                     n.Description.Contains(searchString)
                 ).ToList();
-                return View("Menu", filteredResult);
+                return View("Index", filteredResult);
             }
 
-            return View("Menu", data);
+            return View("Index", data);
         }
         
         public async Task<IActionResult> Create()
