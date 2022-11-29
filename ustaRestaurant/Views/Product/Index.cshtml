@@ -56,7 +56,9 @@ font-family: 'Dancing Script', cursive;">
         <div class="row gx-5">
             @foreach (var product in Model)
             {
-                <div class="col-lg-4 mb-5">
+                @if (product.Id==8 ||product.Id==25 ||product.Id==41 ||product.Id==51 ||product.Id==65 ||product.Id==71)
+                {
+                 <div class="col-lg-4 mb-5">
                     <div class="card h-100 shadow border-0">
                         <img class="card-img-top" src="@Html.DisplayFor(mi => product.Image)" alt="...">
                         <div class="card-body p-4">
@@ -71,7 +73,9 @@ font-family: 'Dancing Script', cursive;">
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>   
+                }
+                
 
             }
 
@@ -81,14 +85,14 @@ font-family: 'Dancing Script', cursive;">
         <div class="container-fluid">
             <div class="d-flex justify-content-center">
                 <div class="btn-box">
-                    <a style="display: inline-block;
+                    <a  style="display: inline-block;
 padding: 10px 45px;
 background-color: #ffbe33;
 color: #ffffff;
 border-radius: 45px;
 border: none;
 margin-top: 10px;
-cursor:pointer;">
+cursor:pointer;" asp-area="" asp-controller="Product" asp-action="Menu">
                         View More
                     </a>
                 </div>

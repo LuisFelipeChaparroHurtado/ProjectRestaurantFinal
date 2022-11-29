@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ustaRestaurant.Data.Base;
 using ustaRestaurant.Data.Enum;
 namespace ustaRestaurant.Models
 {
-    public class Comment
+    public class Comment:IEntityBase
     {
         [Key]
         public int Id { get; set; }

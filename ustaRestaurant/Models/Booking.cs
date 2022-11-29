@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ustaRestaurant.Data.Base;
 
 namespace ustaRestaurant.Models
 {
-    public class Booking
+    public class Booking: IEntityBase
     {
         [Key]
         public int Id { get; set; }
@@ -19,8 +20,12 @@ namespace ustaRestaurant.Models
         [Required(ErrorMessage = "Date is required")]
         public string Email { get; set; }
 
+        [Display(Name = "How Many")]
+        [Required(ErrorMessage = "HowMany is required")]
+        public int HowMany { get; set; }
+
         [Display(Name = "Date")]
         [Required(ErrorMessage = "Date is required")]
-        public double Date { get; set; }
+        public DateTime Date { get; set; }
     }
 }
