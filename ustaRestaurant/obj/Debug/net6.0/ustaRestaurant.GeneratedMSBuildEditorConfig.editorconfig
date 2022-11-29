@@ -43,6 +43,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Booking/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Booking/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Booking/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Booking/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Delivery/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

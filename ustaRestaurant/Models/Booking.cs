@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ustaRestaurant.Data.Base;
 
 namespace ustaRestaurant.Models
 {
-    public class Booking
+    public class Booking : IEntityBase
     {
         [Key]
         public int Id { get; set; }

@@ -26,6 +26,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IDeliveryService, DeliveryService>();
 builder.Services.AddScoped<IProductTypeService, ProductTypeService>();
+builder.Services.AddScoped<IBookingService, BookingService>();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
