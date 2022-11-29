@@ -26,7 +26,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IDeliveryService, DeliveryService>();
 builder.Services.AddScoped<IProductTypeService, ProductTypeService>();
+<<<<<<< HEAD
 builder.Services.AddScoped<ICommentService, CommentService>();
+=======
+>>>>>>> 7d92e6c5b14e7a616c52a2209b8e0b891382523f
 builder.Services.AddScoped<IBookingService, BookingService>();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 

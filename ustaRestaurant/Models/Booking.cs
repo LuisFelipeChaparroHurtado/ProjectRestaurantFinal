@@ -3,7 +3,11 @@ using ustaRestaurant.Data.Base;
 
 namespace ustaRestaurant.Models
 {
+<<<<<<< HEAD
     public class Booking: IEntityBase
+=======
+    public class Booking : IEntityBase
+>>>>>>> 7d92e6c5b14e7a616c52a2209b8e0b891382523f
     {
         [Key]
         public int Id { get; set; }
