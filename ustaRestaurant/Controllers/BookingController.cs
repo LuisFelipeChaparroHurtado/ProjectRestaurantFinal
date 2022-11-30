@@ -32,7 +32,7 @@ namespace ustaRestaurant.Controllers
                 return View(booking);
             }
             await _service.AddAsync(booking);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Home", null);
         }
         //Get: ProductTypes/Details/1
 

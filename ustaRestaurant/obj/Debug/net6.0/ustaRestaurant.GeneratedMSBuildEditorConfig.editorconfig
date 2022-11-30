@@ -8,177 +8,177 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ustaRestaurant
 build_property.RootNamespace = ustaRestaurant
-build_property.ProjectDir = C:\Users\Juanr\Documents\ASP-RESTAURANTE\ProjectRestaurantFinal\ustaRestaurant\
+build_property.ProjectDir = D:\SEPTIMO SEMESTRE\ASP.NET CODE\ProjectGitRestaurant\ustaProjectRestaurant\ustaRestaurant\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Juanr\Documents\ASP-RESTAURANTE\ProjectRestaurantFinal\ustaRestaurant
+build_property.MSBuildProjectDirectory = D:\SEPTIMO SEMESTRE\ASP.NET CODE\ProjectGitRestaurant\ustaProjectRestaurant\ustaRestaurant
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Areas/Identity/Pages/Account/Login.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Areas/Identity/Pages/Account/Logout.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Areas/Identity/Pages/Account/Register.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Areas/Identity/Pages/_ViewImports.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Booking/Index.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Booking/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Delivery/Create.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Delivery/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Delivery/Delete.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Delivery/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Delivery/Edit.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Delivery/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Delivery/Index.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Delivery/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Home/Index.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Home/Privacy.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/ProductType/Create.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/ProductType/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFR5cGVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/ProductType/Delete.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/ProductType/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFR5cGVcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/ProductType/Edit.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/ProductType/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFR5cGVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/ProductType/Index.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/ProductType/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFR5cGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Admin.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Antipasto.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Antipasto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxBbnRpcGFzdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Beverages.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Beverages.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxCZXZlcmFnZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Cannelloni.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Cannelloni.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDYW5uZWxsb25pLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Create.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Crep.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Crep.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Delete.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Details.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Edit.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Fish.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Fish.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxGaXNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Index.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Lasagnas.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Lasagnas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxMYXNhZ25hcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/OvenPizza.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/OvenPizza.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxPdmVuUGl6emEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/PiennoBread.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/PiennoBread.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQaWVubm9CcmVhZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Ravioli.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Ravioli.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxSYXZpb2xpLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Product/Spaguetti.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Product/Spaguetti.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxTcGFndWV0dGkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Shared/Error.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Shared/NotFound.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Shared/NotFound.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdEZvdW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Shared/_CreateItem.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Shared/_CreateItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DcmVhdGVJdGVtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Shared/_LoginPartial.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/_ViewImports.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/_ViewStart.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Juanr/Documents/ASP-RESTAURANTE/ProjectRestaurantFinal/ustaRestaurant/Views/Shared/_Layout.cshtml]
+[D:/SEPTIMO SEMESTRE/ASP.NET CODE/ProjectGitRestaurant/ustaProjectRestaurant/ustaRestaurant/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-stmvf60lwm
