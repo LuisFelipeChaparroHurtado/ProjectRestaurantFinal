@@ -27,7 +27,7 @@ namespace ustaRestaurant.Controllers
 
         [Authorize(Roles = UserRoles.User)]
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("FullName", "PhoneNumber", "Email", "HowMany", "Date")] Booking booking)
+        public async Task<IActionResult> Create([Bind("FullName,PhoneNumber,Email,HowMany,Date")] Booking booking)
         {
             if (!ModelState.IsValid)
             {
@@ -36,7 +36,7 @@ namespace ustaRestaurant.Controllers
             await _service.AddAsync(booking);
             return RedirectToAction("Index", "Home", null);
         }
-        //Get: ProductTypes/Details/1
+        //Get: Booking/Details/1
 
         public async Task<IActionResult> Details(int id)
         {
@@ -45,7 +45,7 @@ namespace ustaRestaurant.Controllers
             if (bookingsDetails == null) return View("NotFound");
             return View(bookingsDetails);
         }
-        //Get: ProductType/Edit
+        //Get: Booking/Edit
         public async Task<IActionResult> Edit(int id)
         {
             var bookingsDetails = await _service.GetByIdAsync(id);
@@ -54,9 +54,9 @@ namespace ustaRestaurant.Controllers
             return View(bookingsDetails);
         }
 
-        //Get: ProductType/Edit/1
+        //Get: Booking/Edit/1
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName")] Booking booking)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,PhoneNumber,Email,HowMany,Date")] Booking booking)
         {
             if (!ModelState.IsValid) return View(booking);
             {
@@ -69,7 +69,7 @@ namespace ustaRestaurant.Controllers
             }
             return View(booking);
         }
-        //Get: ProductType/Delete/id
+        //Get: Booking/Delete/id
         public async Task<IActionResult> Delete(int id)
         {
             var bookingsDetails = await _service.GetByIdAsync(id);
