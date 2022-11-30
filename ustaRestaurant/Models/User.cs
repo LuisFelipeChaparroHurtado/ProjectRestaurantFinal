@@ -4,19 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace ustaRestaurant.Models
 {
-    public class User
+    public class User:IdentityUser
     {
-        [Key]
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-
-        public DateTime Birthday { get; set; }
-
-        public string Address { get; set; }
-
-        public string UserId { get; set; }
-        [ForeignKey("UserId")]
-        public IdentityDbContext<IdentityUser> IdentityUser;
-     }
+        [Display(Name = "Full name")]
+        public string FullName { get; set; }
+    }
 }

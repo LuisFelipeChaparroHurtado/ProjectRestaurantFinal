@@ -19,8 +19,5 @@ namespace ustaRestaurant.Models
         [Display(Name = "State Delivery")]
         [Required(ErrorMessage = "State Delivery is required")]
         public Boolean StateDelivery { get; set; }
-
-        //Relationship
-        public List<Ticket>? Tickets { get; set; }
     }
 }
