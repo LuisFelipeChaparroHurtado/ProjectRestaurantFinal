@@ -702,9 +702,35 @@ a:focus {
         box-shadow: none;
     }
 
-        .book_section .form_container .form-control::-webkit-input-placeholder {
-            color: #222222;
-        }
+.booking {
+    width: 100%;
+    border: none;
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 25px;
+    border: 1px solid #999;
+    outline: none;
+    color: #000000;
+    border-radius: 5px;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn_box {
+    display: inline-block;
+    padding: 10px 55px;
+    background-color: #ffbe33;
+    color: #ffffff;
+    border-radius: 45px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border: none;
+}
+
+.book_section .form_container .form-control::-webkit-input-placeholder {
+    color: #222222;
+}
 
         .book_section .form_container .form-control:-ms-input-placeholder {
             color: #222222;
@@ -1322,6 +1348,11 @@ p {
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;
+}
+
+.imgCard {
+    max-width: 100%;
+    height: 100%;
 }
 
 

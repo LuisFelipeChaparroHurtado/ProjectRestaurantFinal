@@ -13,8 +13,8 @@
                     Te mereces un momento especial, y nosotros queremos llevar Italia a tu mesa como en cada visita a nuestros restaurantes. <br />Prueba la auténtica cocina italiana a domicilio o para recoger en tu sede más cercana.
                 </p>
                 <div>
-                    <button class="boton" type="button"><span class="decoracionBoton"></span>WATCH MORE</button>
-                    <button class="boton" type="button"><span class="decoracionBoton"></span>SUBSCRIBE</button>
+                    <a class="boton" type="button" asp-controller="Product" asp-action="Index"><span class="decoracionBoton"></span>WATCH MORE</a>
+                    <a class="boton" type="button" asp-area="Identity" asp-page="/Account/Logout"><span class="decoracionBoton"></span>SUBSCRIBE</a>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
                     <div class="text-center">
                         <h2 class="fw-bolder" style="font-size: 2.5rem;
 font-weight: bold;
-font-family: 'Dancing Script', cursive;">
+font-family: 'Dancing Script', cursive;margin-bottom:40px">
                             Recommendations for you
                         </h2>
                     </div>
@@ -73,7 +73,7 @@ color: #ffffff;
 border-radius: 45px;
 border: none;
 margin-top: 10px;
-cursor:pointer;" asp-area="" asp-controller="Product" asp-action="Menu">
+cursor:pointer;" asp-area="" asp-controller="Product" asp-action="Index">
                             View More
                         </a>
                     </div>
@@ -94,33 +94,27 @@ font-family: 'Dancing Script', cursive;">
                                 <form asp-controller="Booking" asp-action="Create">
                                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                     <div class="form-group">
-                                        <label asp-for="FullName" class="control-label"></label>
-                                        <input asp-for="FullName" class="form-control" />
+                                        <input asp-for="FullName" class="booking" placeholder="FullName"/>
                                         <span asp-validation-for="FullName" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
-                                        <label asp-for="PhoneNumber" class="control-label"></label>
-                                        <input asp-for="PhoneNumber" class="form-control" />
+                                        <input asp-for="PhoneNumber" class="booking" placeholder="PhoneNumber"/>
                                         <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
-                                        <label asp-for="Email" class="control-label"></label>
-                                        <input asp-for="Email" class="form-control" />
+                                        <input asp-for="Email" class="booking" placeholder="Email"/>
                                         <span asp-validation-for="Email" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
-                                        <label asp-for="HowMany" class="control-label"></label>
-                                        <input asp-for="HowMany" class="form-control" />
+                                        <input asp-for="HowMany" class="booking" placeholder="How many persons?"/>
                                         <span asp-validation-for="HowMany" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
-                                        <label asp-for="Date" class="control-label"></label>
-                                        <input type="date" asp-for="Date" class="form-control" />
+                                        <input type="date" asp-for="Date" class="booking"/>
                                         <span asp-validation-for="Date" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" value="Create" class="btn btn-outline-success float-end" />
-                                        <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
+                                        <input type="submit" value="Book Now" class="btn_box float-end mt-2" />
                                     </div>
                                 </form>
                             </div>
