@@ -3,14 +3,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ustaRestaurant.Models
 {
-    public class Cart
+    public class OrderItem
     {
         [Key]
         public int Id { get; set; }
 
-        //Relationship
+        public int Amount { get; set; }
+        public double Price { get; set; }
+
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
         public Product Product { get; set; }
+
+        public int OrderId { get; set; }
+        [ForeignKey("OrderId")]
+        public Order Order { get; set; }
     }
 }

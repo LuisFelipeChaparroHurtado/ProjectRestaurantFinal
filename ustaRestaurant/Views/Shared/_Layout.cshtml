@@ -27,7 +27,7 @@
                 <ul class="me-auto" style="margin-top:13px; margin-left:-70px">
                     <li class="nav-item" style="margin-left:90px"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color:#ffbe33;">Home</a></li>
                     <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Product" asp-action="Index" style="color:#ffff;">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Product" asp-action="Index" style="color:#ffff;">Order</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" asp-area="" asp-controller="Orders" asp-action="AddItemToShoppingCart" style="color:#ffff;">Order @await Component.InvokeAsync("ShoppingCartSummary") </a></li>
 
                     @if (User.Identity.IsAuthenticated && User.IsInRole(UserRoles.Admin))
                     {
@@ -37,7 +37,7 @@
                                 &nbsp;
                                 Management
                             </a>
-                            <div class="dropdown-menu dropdown-menu-white">
+                            <div class="ee dropdown-menu">
                                 <a class="dropdown-item" asp-controller="Delivery" asp-action="Index" style="color:#ffbe33;"><i class="bi bi-truck"></i>&nbsp; Delivery</a>
                                 <a class="dropdown-item" asp-controller="Product" asp-action="Admin" style="color:#ffbe33;"><i class="bi bi-bag-fill"></i>&nbsp; Product</a>
                                 <a class="dropdown-item" asp-controller="ProductType" asp-action="Index" style="color:#ffbe33;"><i class="bi bi-bag-heart-fill"></i>&nbsp; Product Type</a>

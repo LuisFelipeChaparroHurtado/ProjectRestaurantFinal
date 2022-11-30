@@ -27,8 +27,6 @@ namespace ustaRestaurant.Models
         public double Price { get; set; }
 
         //Relationships
-        public List<OrderDetail> OrderDetails { get; set; }
-        public List<Cart> Carts { get; set; }
         public int ProductTypeId { get; set; }
         [ForeignKey("ProductTypeId")]
         public ProductType ProductType { get; set; }    

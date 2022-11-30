@@ -11,7 +11,7 @@ using ustaRestaurant.Data;
 namespace ustaRestaurant.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221129063628_AppInitial")]
+    [Migration("20221130025347_AppInitial")]
     partial class AppInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -82,6 +82,10 @@ namespace ustaRestaurant.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("varchar(256)");
@@ -132,6 +136,8 @@ namespace ustaRestaurant.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -242,22 +248,6 @@ namespace ustaRestaurant.Migrations
                     b.ToTable("Bookings");
                 });
 
-            modelBuilder.Entity("ustaRestaurant.Models.Cart", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("Carts");
-                });
-
             modelBuilder.Entity("ustaRestaurant.Models.Comment", b =>
                 {
                     b.Property<int>("Id")
@@ -306,44 +296,44 @@ namespace ustaRestaurant.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("DeliveryAddreess")
-                        .HasColumnType("longtext");
-
                     b.Property<string>("Email")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("ustaRestaurant.Models.OrderDetail", b =>
+            modelBuilder.Entity("ustaRestaurant.Models.OrderItem", b =>
                 {
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TicketId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id")
+                    b.Property<int>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Total")
+                    b.Property<double>("Price")
                         .HasColumnType("double");
 
-                    b.HasKey("ProductId", "OrderId", "TicketId");
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("OrderId");
 
-                    b.HasIndex("TicketId");
+                    b.HasIndex("ProductId");
 
-                    b.ToTable("OrderDetails");
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("ustaRestaurant.Models.Product", b =>
@@ -392,26 +382,36 @@ namespace ustaRestaurant.Migrations
                     b.ToTable("ProductTypes");
                 });
 
-            modelBuilder.Entity("ustaRestaurant.Models.Ticket", b =>
+            modelBuilder.Entity("ustaRestaurant.Models.ShoppingCartItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("DeliveryId")
+                    b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<string>("NumberTicket")
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ShoppingCartId")
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DeliveryId");
+                    b.HasIndex("ProductId");
 
-                    b.ToTable("Tickets");
+                    b.ToTable("ShoppingCartItems");
+                });
+
+            modelBuilder.Entity("ustaRestaurant.Models.User", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("longtext");
+
+                    b.HasDiscriminator().HasValue("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -465,42 +465,32 @@ namespace ustaRestaurant.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ustaRestaurant.Models.Cart", b =>
+            modelBuilder.Entity("ustaRestaurant.Models.Order", b =>
                 {
-                    b.HasOne("ustaRestaurant.Models.Product", "Product")
-                        .WithMany("Carts")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("ustaRestaurant.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
 
-                    b.Navigation("Product");
+                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("ustaRestaurant.Models.OrderDetail", b =>
+            modelBuilder.Entity("ustaRestaurant.Models.OrderItem", b =>
                 {
                     b.HasOne("ustaRestaurant.Models.Order", "Order")
-                        .WithMany("OrderDetails")
+                        .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ustaRestaurant.Models.Product", "Product")
-                        .WithMany("OrderDetails")
+                        .WithMany()
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ustaRestaurant.Models.Ticket", "Ticket")
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("TicketId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Order");
 
                     b.Navigation("Product");
-
-                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("ustaRestaurant.Models.Product", b =>
@@ -514,42 +504,23 @@ namespace ustaRestaurant.Migrations
                     b.Navigation("ProductType");
                 });
 
-            modelBuilder.Entity("ustaRestaurant.Models.Ticket", b =>
+            modelBuilder.Entity("ustaRestaurant.Models.ShoppingCartItem", b =>
                 {
-                    b.HasOne("ustaRestaurant.Models.Delivery", "Delivery")
-                        .WithMany("Tickets")
-                        .HasForeignKey("DeliveryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("ustaRestaurant.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId");
 
-                    b.Navigation("Delivery");
-                });
-
-            modelBuilder.Entity("ustaRestaurant.Models.Delivery", b =>
-                {
-                    b.Navigation("Tickets");
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ustaRestaurant.Models.Order", b =>
                 {
-                    b.Navigation("OrderDetails");
-                });
-
-            modelBuilder.Entity("ustaRestaurant.Models.Product", b =>
-                {
-                    b.Navigation("Carts");
-
-                    b.Navigation("OrderDetails");
+                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("ustaRestaurant.Models.ProductType", b =>
                 {
                     b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("ustaRestaurant.Models.Ticket", b =>
-                {
-                    b.Navigation("OrderDetails");
                 });
 #pragma warning restore 612, 618
         }

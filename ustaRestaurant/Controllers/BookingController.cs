@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ustaRestaurant.Data.Services;
+using ustaRestaurant.Data.Static;
 using ustaRestaurant.Models;
 
 namespace ustaRestaurant.Controllers
@@ -13,17 +14,18 @@ namespace ustaRestaurant.Controllers
         {
             _service = service;
         }
-        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var data = await _service.GetAllAsync();
             return View(data);
         }
+        [Authorize(Roles = UserRoles.User)]
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize(Roles = UserRoles.User)]
         [HttpPost]
 <<<<<<< HEAD
         public async Task<IActionResult> Create([Bind("FullName", "PhoneNumber","Email", "HowMany", "Date")] Booking booking)
@@ -36,11 +38,10 @@ namespace ustaRestaurant.Controllers
                 return View(booking);
             }
             await _service.AddAsync(booking);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Home", null);
         }
         //Get: ProductTypes/Details/1
 
-        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var bookingsDetails = await _service.GetByIdAsync(id);
