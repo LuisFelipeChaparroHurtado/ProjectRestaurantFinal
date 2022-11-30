@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using ustaRestaurant.Data.Cart;
 using ustaRestaurant.Data.Services;
+using ustaRestaurant.Data.Static;
 using ustaRestaurant.Data.ViewModels;
 
 namespace ustaRestaurant.Controllers
 {
+    [Authorize(Roles = UserRoles.User)]
     public class OrdersController : Controller
     {
         private readonly IProductService _productService;
