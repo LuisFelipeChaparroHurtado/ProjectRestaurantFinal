@@ -10,11 +10,13 @@ namespace ustaRestaurant.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService _service;
+        private readonly ICommentService _commentService;
 
-        public HomeController(ILogger<HomeController> logger, IProductService service)
+        public HomeController(ILogger<HomeController> logger, IProductService service, ICommentService commentService)
         {
             _logger = logger;
             _service = service;
+            _commentService = commentService;
         }
 
         [AllowAnonymous]
@@ -22,6 +24,8 @@ namespace ustaRestaurant.Controllers
         {
             var data = await _service.GetAllAsync(pt => pt.ProductType);
             ViewBag.Data = data;
+            var dataComment = await _commentService.GetAllAsync();
+            ViewBag.DataComment = dataComment;
             return View();
         }
         public IActionResult Privacy()

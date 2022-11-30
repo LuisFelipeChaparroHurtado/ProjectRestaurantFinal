@@ -1,4 +1,5 @@
-﻿
+﻿@model Booking
+
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -35,26 +36,26 @@ font-family: 'Dancing Script', cursive;">
         <div class="row gx-5">
             @foreach (var product in ViewBag.Data)
             {
-                @if (product.Id==8 ||product.Id==25 ||product.Id==41 ||product.Id==51 ||product.Id==65 ||product.Id==71)
+                @if (product.Id == 8 || product.Id == 25 || product.Id == 41 || product.Id == 51 || product.Id == 65 || product.Id == 71)
                 {
-                 <div class="col-lg-4 mb-5">
-                    <div class="card h-100 shadow border-0">
-                        <img class="card-img-top" src="@product.Image" alt="...">
-                        <div class="card-body p-4">
+                    <div class="col-lg-4 mb-5">
+                        <div class="card h-100 shadow border-0">
+                            <img class="card-img-top" src="@product.Image" alt="...">
+                            <div class="card-body p-4">
 
-                            <a class="text-decoration-none link-dark stretched-link" asp-controller="Product" asp-action="Details" asp-route-id="@product.Id"><h5 class="card-title mb-3" style="font-weight: bold;">@product.Name</h5></a>
-                            <p class="card-text mb-0">
-                                @product.Description
-                            </p>
-                            <div class="card-body d-flex justify-content-between align-items-center p-0">
-                                <h6>$@product.Price</h6>
-                                <a class="btn  btn-sm boton-cart"><i class="bi bi-cart-fill" style="color:#ffffff"></i></a>
+                                <a class="text-decoration-none link-dark stretched-link" asp-controller="Product" asp-action="Details" asp-route-id="@product.Id"><h5 class="card-title mb-3" style="font-weight: bold;">@product.Name</h5></a>
+                                <p class="card-text mb-0">
+                                    @product.Description
+                                </p>
+                                <div class="card-body d-flex justify-content-between align-items-center p-0">
+                                    <h6>$@product.Price</h6>
+                                    <a class="btn  btn-sm boton-cart"><i class="bi bi-cart-fill" style="color:#ffffff"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>   
                 }
-                
+
 
             }
 
@@ -64,7 +65,7 @@ font-family: 'Dancing Script', cursive;">
         <div class="container-fluid">
             <div class="d-flex justify-content-center">
                 <div class="btn-box">
-                    <a  style="display: inline-block;
+                    <a style="display: inline-block;
 padding: 10px 45px;
 background-color: #ffbe33;
 color: #ffffff;
@@ -89,42 +90,36 @@ font-family: 'Dancing Script', cursive;">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form_container">
-                            <form action="">
-                                <div>
-                                    <input type="text" class="form-control" placeholder="Your Name" />
+                            <form asp-controller="Booking" asp-action="Create" >
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="FullName" class="control-label"></label>
+                                    <input asp-for="FullName" class="form-control" />
+                                    <span asp-validation-for="FullName" class="text-danger"></span>
                                 </div>
-                                <div>
-                                    <input type="text" class="form-control" placeholder="Phone Number" />
+                                <div class="form-group">
+                                    <label asp-for="PhoneNumber" class="control-label"></label>
+                                    <input asp-for="PhoneNumber" class="form-control" />
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                                 </div>
-                                <div>
-                                    <input type="email" class="form-control" placeholder="Your Email" />
+                                <div class="form-group">
+                                    <label asp-for="Email" class="control-label"></label>
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
-                                <div>
-                                    <select class="form-control nice-select wide">
-                                        <option value="" disabled selected>
-                                            How many persons?
-                                        </option>
-                                        <option value="">
-                                            2
-                                        </option>
-                                        <option value="">
-                                            3
-                                        </option>
-                                        <option value="">
-                                            4
-                                        </option>
-                                        <option value="">
-                                            5
-                                        </option>
-                                    </select>
+                                <div class="form-group">
+                                    <label asp-for="HowMany" class="control-label"></label>
+                                    <input asp-for="HowMany" class="form-control" />
+                                    <span asp-validation-for="HowMany" class="text-danger"></span>
                                 </div>
-                                <div>
-                                    <input type="date" class="form-control">
+                                <div class="form-group">
+                                    <label asp-for="Date" class="control-label"></label>
+                                    <input type="date" asp-for="Date" class="form-control" />
+                                    <span asp-validation-for="Date" class="text-danger"></span>
                                 </div>
-                                <div class="btn_box">
-                                    <button>
-                                        Book Now
-                                    </button>
+                                <div class="form-group">
+                                    <input type="submit" value="Create" class="btn btn-outline-success float-end" />
+                                    <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
                                 </div>
                             </form>
                         </div>
@@ -147,31 +142,18 @@ font-family: 'Dancing Script', cursive;">
             </div>
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> Fuimos un lunes festivo. Fue un oasis en medio de una zona donde los restaurantes solo ofrecen trucha. Pedimos unos canelones de espinaca y ricota y un crepe de pollo y champignones. Deliciosos y hechos en horno de leña. La carta es muy variada. Los precios muy buenos. La amabilidad y el ambiente resaltan. Recomendadísimo. <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>Natalia Vazquez</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> El lugar es encantador y la comida deliciosa. Lo único que mejoraría es el tiempo de atención que es un poco demorado. De resto es muy conveniente ya que tiene un espacio de parqueadero y a 500 mts un lugar de postres si uno se anima. <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>Andrea González</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row gy-4 justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="testimonial-content">
-                                    <p>
-                                        <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i>Un lugar con una decoración hermosa, un ambiente tranquilo y buena música.
-                                        En cuanto a los platos, deliciosooosos!!! Sabores increíbles que alegran el paladar. Precios accesibles y una atención muy buena. 100% recomendado.
-                                        Me encantaría que hubiera uno más cerca de Bogotá 😁 <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i>
-                                    </p><h3>Sandra Oviedo</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                                </div>
-                            </div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div>
+                    @foreach (var comment in ViewBag.DataComment)
+                    {
+                        @if (comment.Id == 1)
+                        {
+                            <div class="carousel-item active">
+                                <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> @comment.Opinion <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>@comment.FullName</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
+                            </div>
+                        }
+                        <div class="carousel-item">
+                            <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> @comment.Opinion <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>@comment.FullName</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> El lugar es encantador y la comida deliciosa. Lo único que mejoraría es el tiempo de atención que es un poco demorado. De resto es muy conveniente ya que tiene un espacio de parqueadero y a 500 mts un lugar de postres si uno se anima. <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>Andrea González</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> El lugar es encantador y la comida deliciosa. Lo único que mejoraría es el tiempo de atención que es un poco demorado. De resto es muy conveniente ya que tiene un espacio de parqueadero y a 500 mts un lugar de postres si uno se anima. <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>Andrea González</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
-                    </div>
+                    }
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
