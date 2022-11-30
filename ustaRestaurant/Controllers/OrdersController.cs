@@ -49,7 +49,7 @@ namespace ustaRestaurant.Controllers
             {
                 _shoppingCart.AddItemToCart(item);
             }
-            return RedirectToAction(nameof(ShoppingCart));
+            return RedirectToAction("Index", "Product", null);
         }
         public async Task<IActionResult> RemoveItemFromShoppingCart(int id)
         {
