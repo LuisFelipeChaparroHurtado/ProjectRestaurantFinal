@@ -962,31 +962,6 @@ namespace ustaRestaurant.Data
                     });
                     context.SaveChanges();
                 }
-                //Cart
-                if (!context.Carts.Any())
-                {
-                    context.Carts.AddRange(new List<Cart>()
-                    {
-                        new Cart()
-                        {
-                            ProductId= 15,
-                        },
-                        new Cart()
-                        {
-                            ProductId= 26,
-                        },
-                        new Cart()
-                        {
-                            ProductId= 17,
-                        },
-                        new Cart()
-                        {
-                            ProductId= 36,
-                        },
-
-                 });
-                    context.SaveChanges();
-                }
                 //Comment
                 if (!context.Comments.Any())
                 {
@@ -1035,46 +1010,6 @@ namespace ustaRestaurant.Data
                             Opinion="La atención fue genial y los platos estuvieron bien preparados. No ed costoso y el ambiente es bastante agradable.",
                         }
                     });
-                    context.SaveChanges();
-                }
-                //Order
-                if (!context.Orders.Any())
-                {
-                    context.Orders.AddRange(new List<Order>()
-                    {
-                        new Order()
-                        {
-                            Email="juan.roblesa@usantoto.edu.co",
-                            DeliveryAddreess="calle 28 A # 7A-10"
-                        },
-                        new Order()
-                        {
-                           Email="luis.chaparroh@usantoto.edu.co",
-                            DeliveryAddreess="calle 28 A # 7A-10"
-                        }
-
-                 });
-                    context.SaveChanges();
-                }
-                //Ticket
-                if (!context.Tickets.Any())
-                {
-                    context.Tickets.AddRange(new List<Ticket>()
-                    {
-                        new Ticket()
-                        {
-                            NumberTicket="1",
-                            Date=DateTime.Now.AddDays(-30),
-                            DeliveryId=1
-                        },
-                        new Ticket()
-                        {
-                            NumberTicket="2",
-                            Date=DateTime.Now.AddDays(-30),
-                            DeliveryId=2
-                        },
-
-                 });
                     context.SaveChanges();
                 }
                 //Booking
@@ -1137,71 +1072,6 @@ namespace ustaRestaurant.Data
                              Email="pablo.arias@gmail.com",
                              HowMany=2,
                              Date=DateTime.Now.AddDays(-10),
-                        },
-
-                 });
-                    context.SaveChanges();
-                }
-                //OrderDetail
-                if (!context.OrderDetails.Any())
-                {
-                    context.OrderDetails.AddRange(new List<OrderDetail>()
-                    {
-                        new OrderDetail()
-                        {
-                             Total=18000.0,
-                             Amount=1,
-                             OrderId=1,
-                             ProductId=14,
-                             TicketId=1
-                        },
-                        new OrderDetail()
-                        {
-                             Total=25000.0,
-                             Amount=1,
-                             OrderId=1,
-                             ProductId=13,
-                             TicketId=1
-                        },
-                        new OrderDetail()
-                        {
-                             Total=18000.0,
-                             Amount=1,
-                             OrderId=1,
-                             ProductId=15,
-                             TicketId=1
-                        },
-                        new OrderDetail()
-                        {
-                             Total=18000.0,
-                             Amount=1,
-                             OrderId=1,
-                             ProductId=26,
-                             TicketId=1
-                        },
-                        new OrderDetail()
-                        {
-                             Total=18000.0,
-                             Amount=1,
-                             OrderId=2,
-                             ProductId=14,
-                             TicketId=2
-                        },
-                        new OrderDetail()
-                        {
-                             Total=18000.0,
-                             Amount=1,
-                             OrderId=2,
-                             ProductId=15,
-                             TicketId=2
-                        },
-                        new OrderDetail()
-                        {
-                             Total=32000.0,
-                             Amount=1,
-                             OrderId=2,
-                             ProductId=32,
-                             TicketId=2
                         },
 
                  });
