@@ -9908,19 +9908,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Felipe\\.nuget\\packages\\": {}
+    "C:\\Users\\Juanr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SEPTIMO SEMESTRE\\ASP.NET CODE\\ProjectGitRestaurant\\ustaProjectRestaurant\\ustaRestaurant\\ustaRestaurant.csproj",
+      "projectUniqueName": "C:\\Users\\Juanr\\Documents\\ASP-RESTAURANTE\\ProjectRestaurantFinal\\ustaRestaurant\\ustaRestaurant.csproj",
       "projectName": "ustaRestaurant",
-      "projectPath": "D:\\SEPTIMO SEMESTRE\\ASP.NET CODE\\ProjectGitRestaurant\\ustaProjectRestaurant\\ustaRestaurant\\ustaRestaurant.csproj",
-      "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
-      "outputPath": "D:\\SEPTIMO SEMESTRE\\ASP.NET CODE\\ProjectGitRestaurant\\ustaProjectRestaurant\\ustaRestaurant\\obj\\",
+      "projectPath": "C:\\Users\\Juanr\\Documents\\ASP-RESTAURANTE\\ProjectRestaurantFinal\\ustaRestaurant\\ustaRestaurant.csproj",
+      "packagesPath": "C:\\Users\\Juanr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Juanr\\Documents\\ASP-RESTAURANTE\\ProjectRestaurantFinal\\ustaRestaurant\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Felipe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Juanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
