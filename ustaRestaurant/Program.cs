@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ustaRestaurant.Data;
+using ustaRestaurant.Data.Cart;
 using ustaRestaurant.Data.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,11 +24,17 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
   //  .AddEntityFrameworkStores<ApplicationDbContext>();
 //Service configuration
+builder.Services.AddScoped<IOrdersService, OrdersService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IDeliveryService, DeliveryService>();
 builder.Services.AddScoped<IProductTypeService, ProductTypeService>();
 builder.Services.AddScoped<ICommentService, CommentService>();
 builder.Services.AddScoped<IBookingService, BookingService>();
+
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+builder.Services.AddSession();
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -62,6 +69,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

@@ -22,10 +22,13 @@
                 <p class="lead">$ @Model.Price</p>
                 <div class="d-flex">
                     <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem">
-                    <button class="btn btn-outline-warning flex-shrink-0" type="button">
+                    <a class="btn btn-outline-warning flex-shrink-0" type="button"
+                       asp-controller="Orders"
+                       asp-action="AddItemToShoppingCart"
+                       asp-route-id="@Model.Id">
                         <i class="bi-cart-fill me-1"></i>
                         Add to cart
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -35,40 +38,40 @@
     <div class="container px-4 px-lg-5 mt-5">
         <h2 class="fw-bolder mb-4" style="font-family: 'Dancing Script', cursive;">Related products</h2>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            
-            @foreach(var Product in ViewBag.Data)
-            { 
-                @if (Product.Id ==ViewBag.Number1 || Product.Id==ViewBag.Number2 || Product.Id==ViewBag.Number3 || Product.Id==ViewBag.Number4)
+
+            @foreach (var Product in ViewBag.Data)
+            {
+                @if (Product.Id == ViewBag.Number1 || Product.Id == ViewBag.Number2 || Product.Id == ViewBag.Number3 || Product.Id == ViewBag.Number4)
                 {
-                 <div class="col mb-5">
-                <div class="card h-100">
+                    <div class="col mb-5">
+                        <div class="card h-100">
 
-                    <img class="card-img-top" src="@Product.Image" alt="...">
+                            <img class="card-img-top" src="@Product.Image" alt="...">
 
-                    <div class="card-body p-4">
-                        <div class="text-center">
+                            <div class="card-body p-4">
+                                <div class="text-center">
 
-                            <h5 class="fw-bolder">@Product.Name</h5>
+                                    <h5 class="fw-bolder">@Product.Name</h5>
 
-                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+
+                                    $@Product.Price
+                                </div>
                             </div>
 
-                            $@Product.Price
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-warning mt-auto" asp-controller="Product" asp-action="Details" asp-route-id="@Product.Id"><i class="bi-cart-fill me-1"></i></a></div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-warning mt-auto"asp-controller="Product" asp-action="Details" asp-route-id="@Product.Id"><i class="bi-cart-fill me-1"></i></a></div>
-                    </div>
-                </div>
-            </div>    
                 }
-                
+
             }
         </div>
     </div>

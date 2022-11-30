@@ -38,6 +38,10 @@ namespace ustaRestaurant.Migrations
                 {
                     Id = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    Discriminator = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    FullName = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     UserName = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     NormalizedUserName = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true)
@@ -121,23 +125,6 @@ namespace ustaRestaurant.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Deliveries", x => x.Id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Orders",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Email = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    DeliveryAddreess = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Orders", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -284,25 +271,24 @@ namespace ustaRestaurant.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Tickets",
+                name: "Orders",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    NumberTicket = table.Column<string>(type: "longtext", nullable: true)
+                    Email = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    DeliveryId = table.Column<int>(type: "int", nullable: false)
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tickets", x => x.Id);
+                    table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tickets_Deliveries_DeliveryId",
-                        column: x => x.DeliveryId,
-                        principalTable: "Deliveries",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_Orders_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -334,18 +320,27 @@ namespace ustaRestaurant.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Carts",
+                name: "OrderItems",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ProductId = table.Column<int>(type: "int", nullable: false)
+                    Amount = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<double>(type: "double", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    OrderId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Carts", x => x.Id);
+                    table.PrimaryKey("PK_OrderItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Carts_Products_ProductId",
+                        name: "FK_OrderItems_Orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Orders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_OrderItems_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
@@ -354,37 +349,24 @@ namespace ustaRestaurant.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "OrderDetails",
+                name: "ShoppingCartItems",
                 columns: table => new
                 {
-                    OrderId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    TicketId = table.Column<int>(type: "int", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false),
-                    Total = table.Column<double>(type: "double", nullable: false),
-                    Amount = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ProductId = table.Column<int>(type: "int", nullable: true),
+                    Amount = table.Column<int>(type: "int", nullable: false),
+                    ShoppingCartId = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderDetails", x => new { x.ProductId, x.OrderId, x.TicketId });
+                    table.PrimaryKey("PK_ShoppingCartItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_OrderDetails_Orders_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "Orders",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_OrderDetails_Products_ProductId",
+                        name: "FK_ShoppingCartItems_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_OrderDetails_Tickets_TicketId",
-                        column: x => x.TicketId,
-                        principalTable: "Tickets",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -426,19 +408,19 @@ namespace ustaRestaurant.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Carts_ProductId",
-                table: "Carts",
-                column: "ProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_OrderDetails_OrderId",
-                table: "OrderDetails",
+                name: "IX_OrderItems_OrderId",
+                table: "OrderItems",
                 column: "OrderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderDetails_TicketId",
-                table: "OrderDetails",
-                column: "TicketId");
+                name: "IX_OrderItems_ProductId",
+                table: "OrderItems",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_UserId",
+                table: "Orders",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_ProductTypeId",
@@ -446,9 +428,9 @@ namespace ustaRestaurant.Migrations
                 column: "ProductTypeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tickets_DeliveryId",
-                table: "Tickets",
-                column: "DeliveryId");
+                name: "IX_ShoppingCartItems_ProductId",
+                table: "ShoppingCartItems",
+                column: "ProductId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -472,19 +454,19 @@ namespace ustaRestaurant.Migrations
                 name: "Bookings");
 
             migrationBuilder.DropTable(
-                name: "Carts");
-
-            migrationBuilder.DropTable(
                 name: "Comments");
 
             migrationBuilder.DropTable(
-                name: "OrderDetails");
+                name: "Deliveries");
+
+            migrationBuilder.DropTable(
+                name: "OrderItems");
+
+            migrationBuilder.DropTable(
+                name: "ShoppingCartItems");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
-
-            migrationBuilder.DropTable(
-                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Orders");
@@ -493,13 +475,10 @@ namespace ustaRestaurant.Migrations
                 name: "Products");
 
             migrationBuilder.DropTable(
-                name: "Tickets");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "ProductTypes");
-
-            migrationBuilder.DropTable(
-                name: "Deliveries");
         }
     }
 }
