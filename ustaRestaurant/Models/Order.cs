@@ -8,6 +8,8 @@ namespace ustaRestaurant.Models
         [Key]
         public int Id { get; set; }
 
+        [Display(Name = "Email")]
+        [Required(ErrorMessage = "Email is required")]
         public string Email { get; set; }
 
         public string UserId { get; set; }

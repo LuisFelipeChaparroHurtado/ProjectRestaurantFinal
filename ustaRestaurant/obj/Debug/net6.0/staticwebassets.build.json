@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nVMSrlK27lcGzCwkBES03J1mp+SoiT3FIFWZOFuRF1g=",
+  "Hash": "zO/Mn5H0XyLApjONC/Nt8uMKJnWqovhUz5nrKAI12SQ=",
   "Source": "ustaRestaurant",
   "BasePath": "_content/ustaRestaurant",
   "Mode": "Default",
@@ -1088,6 +1088,23 @@
       "OriginalItemSpec": "wwwroot\\css\\22015.jpg"
     },
     {
+      "Identity": "C:\\Users\\Juanr\\Documents\\ASP-RESTAURANTE\\ProjectRestaurantFinal\\ustaRestaurant\\wwwroot\\css\\Comments.png",
+      "SourceId": "ustaRestaurant",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Juanr\\Documents\\ASP-RESTAURANTE\\ProjectRestaurantFinal\\ustaRestaurant\\wwwroot\\",
+      "BasePath": "_content/ustaRestaurant",
+      "RelativePath": "css/Comments.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Comments.png"
+    },
+    {
       "Identity": "C:\\Users\\Juanr\\Documents\\ASP-RESTAURANTE\\ProjectRestaurantFinal\\ustaRestaurant\\wwwroot\\css\\face.png",
       "SourceId": "ustaRestaurant",
       "SourceType": "Discovered",
@@ -1171,6 +1188,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Juanr\\Documents\\ASP-RESTAURANTE\\ProjectRestaurantFinal\\ustaRestaurant\\wwwroot\\css\\testimonials-bg.jpg",
+      "SourceId": "ustaRestaurant",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Juanr\\Documents\\ASP-RESTAURANTE\\ProjectRestaurantFinal\\ustaRestaurant\\wwwroot\\",
+      "BasePath": "_content/ustaRestaurant",
+      "RelativePath": "css/testimonials-bg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\testimonials-bg.jpg"
     },
     {
       "Identity": "C:\\Users\\Juanr\\Documents\\ASP-RESTAURANTE\\ProjectRestaurantFinal\\ustaRestaurant\\wwwroot\\favicon.ico",

@@ -27,7 +27,7 @@ namespace ustaRestaurant.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("FullName")] Comment Comment)
+        public async Task<IActionResult> Create([Bind("FullName,qualification,Opinion")] Comment Comment)
         {
             if (!ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace ustaRestaurant.Controllers
 
         //Get: Comment/Edit/1
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName")] Comment Comment)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,qualification,Opinion")] Comment Comment)
         {
             if (!ModelState.IsValid) return View(Comment);
             {
