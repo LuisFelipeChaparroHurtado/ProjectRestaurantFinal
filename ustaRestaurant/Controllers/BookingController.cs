@@ -25,7 +25,11 @@ namespace ustaRestaurant.Controllers
         }
 
         [HttpPost]
+<<<<<<< HEAD
         public async Task<IActionResult> Create([Bind("FullName", "PhoneNumber","Email", "HowMany", "Date")] Booking booking)
+=======
+        public async Task<IActionResult> Create([Bind("FullName", "PhoneNumber", "Email", "HowMany", "Date")] Booking booking)
+>>>>>>> 8eec3842f9ab4e495a7bab43ee3efcab5e01e427
         {
             if (!ModelState.IsValid)
             {

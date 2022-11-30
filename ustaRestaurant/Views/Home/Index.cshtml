@@ -1,4 +1,8 @@
 ﻿@model Booking
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8eec3842f9ab4e495a7bab43ee3efcab5e01e427
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -141,31 +145,18 @@ font-family: 'Dancing Script', cursive;">
             </div>
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> Fuimos un lunes festivo. Fue un oasis en medio de una zona donde los restaurantes solo ofrecen trucha. Pedimos unos canelones de espinaca y ricota y un crepe de pollo y champignones. Deliciosos y hechos en horno de leña. La carta es muy variada. Los precios muy buenos. La amabilidad y el ambiente resaltan. Recomendadísimo. <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>Natalia Vazquez</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> El lugar es encantador y la comida deliciosa. Lo único que mejoraría es el tiempo de atención que es un poco demorado. De resto es muy conveniente ya que tiene un espacio de parqueadero y a 500 mts un lugar de postres si uno se anima. <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>Andrea González</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row gy-4 justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="testimonial-content">
-                                    <p>
-                                        <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i>Un lugar con una decoración hermosa, un ambiente tranquilo y buena música.
-                                        En cuanto a los platos, deliciosooosos!!! Sabores increíbles que alegran el paladar. Precios accesibles y una atención muy buena. 100% recomendado.
-                                        Me encantaría que hubiera uno más cerca de Bogotá 😁 <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i>
-                                    </p><h3>Sandra Oviedo</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                                </div>
-                            </div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div>
+                    @foreach (var comment in ViewBag.DataComment)
+                    {
+                        @if (comment.Id == 1)
+                        {
+                            <div class="carousel-item active">
+                                <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> @comment.Opinion <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>@comment.FullName</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
+                            </div>
+                        }
+                        <div class="carousel-item">
+                            <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> @comment.Opinion <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>@comment.FullName</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> El lugar es encantador y la comida deliciosa. Lo único que mejoraría es el tiempo de atención que es un poco demorado. De resto es muy conveniente ya que tiene un espacio de parqueadero y a 500 mts un lugar de postres si uno se anima. <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>Andrea González</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row gy-4 justify-content-center"><div class="col-lg-6"><div class="testimonial-content"><p> <i class="bi bi-quote quote-icon-left" style="color:#ffbe33;"></i> El lugar es encantador y la comida deliciosa. Lo único que mejoraría es el tiempo de atención que es un poco demorado. De resto es muy conveniente ya que tiene un espacio de parqueadero y a 500 mts un lugar de postres si uno se anima. <i class="bi bi-quote quote-icon-right" style="color:#ffbe33;"></i></p><h3>Andrea González</h3><div class="stars" style="color:#ffbe33;"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div></div></div><div class="col-lg-2 text-center"> <img src="https://caracoltv.brightspotcdn.com/dims4/default/f8eb542/2147483647/strip/true/crop/7255x4837+0+0/resize/1000x667!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2F6f%2Feb%2F61047f5244ea8668d9f77d2b8633%2Fgettyimages-1444283668-1.jpg" class="img-fluid testimonial-img" alt=""></div></div>
-                    </div>
+                    }
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

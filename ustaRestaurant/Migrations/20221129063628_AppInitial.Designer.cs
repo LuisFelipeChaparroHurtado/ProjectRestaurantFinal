@@ -11,7 +11,7 @@ using ustaRestaurant.Data;
 namespace ustaRestaurant.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221129011719_AppInitial")]
+    [Migration("20221129063628_AppInitial")]
     partial class AppInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
